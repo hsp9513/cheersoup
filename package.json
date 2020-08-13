@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/hsp9513/csoup/issues"
   },
-  "homepage": "https://github.com/hsp9513/csoup#readme"
+  "homepage": "https://github.com/hsp9513/csoup#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3"
+  }
 }
