@@ -8,9 +8,6 @@ class Element /*extends Node*/{
         if(cache.has(dom)){
             return cache.get(dom)
         }
-        console.log("Element")
-        console.log(dom)
-        console.log($)
         this.dom = dom
         this._$ = $
         cache.set(dom, this)
@@ -120,7 +117,7 @@ class Element /*extends Node*/{
     }
 
     selectFirst(cssQuery){//Element
-        return new Element(this.select(cssQuery).get(0), this._$)
+        return this.select(cssQuery).first()
     }
 
     siblingElements(){//Elements
@@ -247,6 +244,10 @@ class Elements{//extends List
 
     select(cssQuery){//Elements
         return new Elements(this.cheerio.find(cssQuery), this._$)
+    }
+
+    selectFirst(cssQuery){//Element
+        return this.select(cssQuery).first()
     }
 
     size(){

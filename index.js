@@ -3,12 +3,10 @@ const Element = require('./element.js').Element
 const Elements = require('./element.js').Elements
 //const Elements = require('./elements.js').Elements
 
-function CheerSoup(html){
-    const $ = Cheerio.load(html.toString())
+function CheerSoup(html,option={}){
+    option.decodeEntities = option.decodeEntities || false
+    const $ = Cheerio.load(html.toString(), option)
 
-    console.log("CheerSoup")
-    console.log(html.toString().substr(0,1000))
-    console.log($.toString())
     return new Element($.root()[0], $)
 }
 
