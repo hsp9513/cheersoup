@@ -1,5 +1,5 @@
 {
-  "name": "csoup",
+  "name": "cheersoup",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hsp9513/csoup.git"
+    "url": "git+https://github.com/hsp9513/cheersoup.git"
   },
   "keywords": [
-    "csoup",
+    "cheersoup",
     "jsoup",
     "cheerio",
     "parsing"
@@ -19,10 +19,11 @@
   "author": "hsp9513",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hsp9513/csoup/issues"
+    "url": "https://github.com/hsp9513/cheersoup/issues"
   },
-  "homepage": "https://github.com/hsp9513/csoup#readme",
+  "homepage": "https://github.com/hsp9513/cheersoup#readme",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3"
-  }
+  },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" }
 }
