@@ -1,7 +1,7 @@
 {
   "name": "cheersoup",
   "version": "0.0.1",
-  "description": "",
+  "description": "cheersoup is parser using cheerio. cheersoup is working like jsoup(java library).",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
