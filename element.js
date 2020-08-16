@@ -187,7 +187,7 @@ class Elements{//extends List
     }
 
     first(){//Element
-        return this.get(0)
+        return (this.length>0) ? this.get(0) : null
     }
 
     get(index){//Element
@@ -211,7 +211,7 @@ class Elements{//extends List
     }
 
     last(){//Element
-        return this.get(this.cheerio.length-1)
+        return (this.length>0) ? this.get(this.cheerio.length-1) : null
     }
     
     get length(){
