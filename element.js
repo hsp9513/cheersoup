@@ -109,7 +109,8 @@ class Element /*extends Node*/{
     }
 
     root(){//Element
-        return new Element(this._$.root(), this._$)
+//        return new Element(this._$.root(), this._$)
+        return new Document(this._$.root()[0], this._$)
     }
 
     select(cssQuery){//Elements
@@ -129,7 +130,11 @@ class Element /*extends Node*/{
     }
 
     text(){//String
-        return this.cheerio.text() 
+        function travel(dom){
+            return dom.children.map(v=>v.type=="tag" ? travel(v) : v.type=="text" ? v.data.trim() :  "").filter(v=>v!="").join(" ")
+        }
+        return travel(this.dom)
+//        return this.cheerio.text() 
     }
 
     toString(){
@@ -141,10 +146,39 @@ class Element /*extends Node*/{
     }
 
     wholeText(){//String
-        return this.text().replace(/<.+?>/g,"") // correct?
+//        return this.text().replace(/<.+?>/g,"") // correct?
+        return this.text() // correct?
     }
 }
 exports.Element = Element
+
+class Document extends Element{
+    constructor(dom,$){
+        return super(dom,$)
+    }
+
+    body(){//Element
+        return this.selectFirst("body")
+    }
+
+    charset(){//Charset? String?
+
+    }
+
+    head(){//Element
+        return this.selectFirst("head")
+    }
+
+    nodeName(){//String
+
+    }
+
+    title(){//String
+        return this.selectFirst("title")
+    }
+}
+
+exports.Document = Document
 
 class Elements{//extends List
     constructor(cheerio,$){
@@ -255,7 +289,8 @@ class Elements{//extends List
     }
 
     text(){//String
-        return this.cheerio.text()
+        return this.toArray().map(elem=>elem.text()).join(" ")
+//        return this.cheerio.text()
     }
 
     toArray(){//Element[]
