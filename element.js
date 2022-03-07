@@ -250,7 +250,7 @@ class Elements{//extends List
     html(){//String
         return this.toArray()
             .map(elem=>elem.html().trim())
-            .join(v=>"\n")
+            .join("\n")
     }
 
     last(){//Element

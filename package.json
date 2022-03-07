@@ -1,6 +1,6 @@
 {
   "name": "cheersoup",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "cheersoup is parser using cheerio. cheersoup is working like jsoup(java library).",
   "main": "index.js",
   "scripts": {
