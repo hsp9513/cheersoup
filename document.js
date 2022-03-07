@@ -1,12 +1,17 @@
 const Element = require("./element.js")
 
 class Document extends Element{
-    Document(){
-
+    constructor(dom,$){
+        if(cache.has(dom)){
+            return cache.get(dom)
+        }
+        this.dom = dom
+        this._$ = $
+        cache.set(dom, this)
     }
 
     body(){//Element
-
+        return new Element(this.selectFirst("body"), this._$)
     }
 
     charset(){//Charset? String?
@@ -14,7 +19,7 @@ class Document extends Element{
     }
 
     head(){//Element
-
+        return new Element(this.selectFirst("head"), this._$)
     }
 
     nodeName(){//String
@@ -22,10 +27,7 @@ class Document extends Element{
     }
 
     title(){//String
-
+        return new Element(this.selectFirst("title"), this._$)
     }
-
-
-
 }
 

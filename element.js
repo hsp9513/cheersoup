@@ -93,7 +93,11 @@ class Element /*extends Node*/{
     }
 
     parent(){//Element
-        return new Element(this.cheerio.parent().get(0), this._$) 
+        if (this.cheerio.parent().length>0)
+            return new Element(this.cheerio.parent().get(0), this._$) 
+        else
+            return this.root()
+//        return new Element(this.cheerio.parent().get(0), this._$) 
     }
 
     parents(){//Elements
@@ -173,6 +177,9 @@ class Document extends Element{
 
     }
 
+    parent(){//Elemen
+        return null
+    }
     title(){//String
         return this.selectFirst("title")
     }
@@ -190,7 +197,7 @@ class Elements{//extends List
         let res = ""
         for(let i=0; i<this.length; i++){
             if(this.get(i).hasAttr(attributeKey)){
-                res = this.get(i).getAttr(attributeKey)
+                res = this.get(i).attr(attributeKey)
                 break
             }
         }
