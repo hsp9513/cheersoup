@@ -1,6 +1,6 @@
-const Cheerio = require('cheerio')
+const Cheerio  = require('cheerio')
 const Document = require('./element.js').Document
-const Element = require('./element.js').Element
+const Element  = require('./element.js').Element
 const Elements = require('./element.js').Elements
 //const Elements = require('./elements.js').Elements
 
@@ -13,7 +13,7 @@ function CheerSoup(html,option={}){
 }
 
 
-CheerSoup.Element = Element
+CheerSoup.Element  = Element
 CheerSoup.Elements = Elements
 
 module.exports = CheerSoup

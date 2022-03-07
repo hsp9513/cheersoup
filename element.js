@@ -248,7 +248,9 @@ class Elements{//extends List
     }
 
     html(){//String
-        return this.cheerio.html()
+        return this.toArray()
+            .map(elem=>elem.html().trim())
+            .join(v=>"\n")
     }
 
     last(){//Element
