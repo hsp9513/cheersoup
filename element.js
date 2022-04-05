@@ -22,11 +22,11 @@ class Element /*extends Node*/{
     }
 
     child(index){ //Element
-
+        return new Element(this.cheerio.children().get(index), this._$) 
     }
 
     children(){ //Elements
-
+        return new Elements(this.cheerio.children(), this._$) 
     }
 
     className(){//String
